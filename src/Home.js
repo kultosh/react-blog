@@ -9,7 +9,7 @@ function Home() {
 
     return (
         <div className="home">
-            <BlockList blogs={blogs} />
+            <BlockList blogs={blogs} title="All Blogs!" />
         </div>
     )
 }
