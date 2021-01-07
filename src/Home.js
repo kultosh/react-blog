@@ -8,13 +8,13 @@ function Home() {
     ]);
 
     const handleBlog = (id) => {
-        setBlogs(blogs.filter((blog) => blog.id !== id));
+        const newBlogs = blogs.filter(blog => blog.id !== id);
+        setBlogs(newBlogs);
     };
 
     return (
         <div className="home">
-            <BlockList blogs={blogs} title="All Blogs!" handleBlog={handleBlog} />
-            <BlockList blogs={blogs.filter((blog)=> blog.author==='Roger')} title="Roger's blogs" handleBlog={handleBlog} />
+            <BlockList blogs={blogs} title="All Blogs!" handleDelete={handleBlog} />
         </div>
     )
 }

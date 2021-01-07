@@ -1,4 +1,4 @@
-function BlockList ({blogs, title, handleBlog}) {
+function BlockList ({blogs, title, handleDelete}) {
     return (
         <div className="block-list">
             <h2>{title}</h2>
@@ -6,7 +6,7 @@ function BlockList ({blogs, title, handleBlog}) {
                 <div className="blog-preview" key={blog.id}>
                     <h2>{blog.title}</h2>
                     <i>Written By: {blog.author}</i>
-                    <button onClick={() => handleBlog(blog.id)}>delete blog</button>
+                    <button onClick={() => handleDelete(blog.id)}>delete blog</button>
                 </div>
             ))}
         </div>
