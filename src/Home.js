@@ -7,10 +7,14 @@ function Home() {
         { title: 'Learn Vue', body: 'lorem ipsum ...', author: 'Roger', id: 3}
     ]);
 
+    const handleBlog = (id) => {
+        setBlogs(blogs.filter((blog) => blog.id !== id));
+    };
+
     return (
         <div className="home">
-            <BlockList blogs={blogs} title="All Blogs!" />
-            <BlockList blogs={blogs.filter((blog)=>blog.author === 'Roger')} title="Roger's Blogs" />
+            <BlockList blogs={blogs} title="All Blogs!" handleBlog={handleBlog} />
+            <BlockList blogs={blogs.filter((blog)=> blog.author==='Roger')} title="Roger's blogs" handleBlog={handleBlog} />
         </div>
     )
 }
