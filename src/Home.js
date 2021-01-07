@@ -7,6 +7,8 @@ function Home() {
         { title: 'Learn Vue', body: 'lorem ipsum ...', author: 'Roger', id: 3}
     ]);
 
+    const [name, setName] = useState('Santosh');
+
     const handleBlog = (id) => {
         const newBlogs = blogs.filter(blog => blog.id !== id);
         setBlogs(newBlogs);
@@ -14,11 +16,14 @@ function Home() {
 
     useEffect(() => {
         console.log('useEffect ran');
-    })
+        console.log(name);
+    }, [name])
 
     return (
         <div className="home">
             <BlockList blogs={blogs} title="All Blogs!" handleDelete={handleBlog} />
+            <button onClick={() => setName('Prasidha')}>Change Name</button>
+            <p>{name}</p>
         </div>
     )
 }
