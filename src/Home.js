@@ -8,7 +8,7 @@ function Home() {
     useEffect(() => {
         // Note: dont put the setTimeout function in the live server because it gonna make user wait for 1 second more. Here it is just used to show its uses
         setTimeout(() => {
-            fetch('http://localhost:8000/blog')
+            fetch('http://localhost:8000/blogs')
         .then(res => {
             // console.log(res);
             if(!res.ok)
