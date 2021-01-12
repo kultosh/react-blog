@@ -13,8 +13,11 @@ function Home() {
         })
         .then(data => {
             setBlogs(data);
-        });
-        setIsLoading(false);
+            setIsLoading(false);
+        })
+        .catch(err => {
+            console.log(err.message);
+        })
         }, 1000);
     }, []);
 
